@@ -11,6 +11,7 @@
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --font-geist-sans: 'Geist Sans', sans-serif;
   }
 }
 
@@ -24,4 +25,17 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+.debug-red {
+  border: 1px solid rgb(255, 0, 0);
+}
+
+.debug-green {
+  border: 1px solid rgb(0, 255, 0);
+
+}
+
+.debug-blue {
+  border: 1px solid rgb(0, 0, 255);
 }
