@@ -20,7 +20,7 @@ export default function HomePage() {
         <img
           src={profesor.imagen}
           alt={profesor.nombre}
-          className="w-24 h-24 border border-[#800080] border-2  lg:w-24 lg:h-24 mx-auto rounded-full object-cover mb-4"
+          className="w-24 h-24  border-[#800080] border-2  lg:w-24 lg:h-24 mx-auto rounded-full object-cover mb-4"
         />
         <h2 className="text-lg lg:text-xl text-[#330033] font-semibold text-center">{profesor.nombre}</h2>
         <p className="text-sm lg:text-base text-[#003300] text-center">{profesor.departamento}</p>

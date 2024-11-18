@@ -7,17 +7,6 @@ import { Button } from "./ui/Button";
 const SignIn = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
-  const loginWithGoogle = async () => {
-    setIsLoading(true);
-    try {
-      await signIn("google"); // Asegúrate de tener configurado `signIn` de tu autenticación
-    } catch (error) {
-      console.error("Error during Google sign-in", error);
-    } finally {
-      setIsLoading(false);
-    }
-  };
-
   return (
     <div className="container mx-auto flex w-full flex-col justify-center space-y-6 sm:w-[400px]">
       <div className="flex flex-col space-y-2 text-center">
