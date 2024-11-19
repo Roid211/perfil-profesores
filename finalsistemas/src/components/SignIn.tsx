@@ -1,11 +1,9 @@
 "use client";
-import { useState } from "react";
 import { Icons } from "./Icons";
 import Link from "next/link";
 import { Button } from "./ui/Button";
 
 const SignIn = () => {
-  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   return (
     <div className="container mx-auto flex w-full flex-col justify-center space-y-6 sm:w-[400px]">

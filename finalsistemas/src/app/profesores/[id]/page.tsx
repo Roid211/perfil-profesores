@@ -2,11 +2,12 @@
 
 import { useParams, useRouter } from 'next/navigation';
 import { useProfesores } from '@/context/ProfesoresContext';
-import Link from 'next/link';
+import Image from 'next/image'; // Importa el componente Image de Next.js
 
 export default function ProfesorDetalle() {
   const { id } = useParams();  // id es de tipo string | string[] | undefined
   const profesores = useProfesores();
+  const router = useRouter();  // Mover el hook de navegación aquí
 
   // Aseguramos que 'id' sea un string, y si es undefined, mostramos un mensaje de error
   if (!id || Array.isArray(id)) {
@@ -15,12 +16,12 @@ export default function ProfesorDetalle() {
 
   const profesor = profesores.find((p) => p.id === parseInt(id));  // Convertimos el id a entero
 
-  const router = useRouter(); // Hook para navegar
-
-  if (!profesor) return <p className="text-center text-lg font-semibold text-red-600">Profesor no encontrado</p>;
+  if (!profesor) {
+    return <p className="text-center text-lg font-semibold text-red-600">Profesor no encontrado</p>;
+  }
 
   return (
-    <div className='flex flex-col gap-3 mt-3'>
+    <div className="flex flex-col gap-3 mt-3">
       {/* Botón de "Atrás" */}
       <button
         onClick={() => router.back()}
@@ -30,9 +31,12 @@ export default function ProfesorDetalle() {
       </button>
       <div className="max-w-4xl mx-auto p-6 bg-white rounded-lg shadow-lg mt-8">
         <div className="text-center">
-          <img
+          {/* Usamos <Image> en lugar de <img> para optimizar la imagen */}
+          <Image
             src={profesor.imagen}
             alt={profesor.nombre}
+            width={128}  // Especifica el ancho de la imagen
+            height={128} // Especifica el alto de la imagen
             className="w-32 h-32 rounded-full mx-auto mb-4 object-cover"
           />
           <h1 className="text-3xl font-semibold text-gray-800">{profesor.nombre}</h1>
